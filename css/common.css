@@ -1,0 +1,184 @@
+body {
+    background-color: rgb(214, 212, 212);
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr; 
+    grid-template-rows: auto 1fr auto; 
+    grid-gap: 20px; /* Espacio entre celdas */
+}
+
+/* Cabecera que ocupa todo el ancho */
+header {
+    position: relative;
+    grid-column: 1 / -1; /* Ocupa todo el ancho de la cuadrícula */
+}
+
+.Imagen_header img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.Imagen_header::before {
+    content: "Cotizacion Monetaria";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 25px;
+    font-weight: lighter;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+.logotipo {
+    position: absolute;
+    top: 50%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+}
+
+.logotipo img {
+    width: 75px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Barra lateral izquierda */
+.sections_articulos {
+    background-color: rgb(84, 158, 187);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    grid-column: 1; /* Ocupa la primera columna */
+    grid-row: 2; /* Ocupa la segunda fila */
+}
+
+.sections_articulos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sections_articulos ul li {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: rgb(165, 163, 163);
+    padding: 20px;
+    border: 4px solid rgb(138, 143, 138);
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sections_articulos ul li:hover {
+    background-color: rgb(140, 140, 140);
+}
+
+.sections_articulos ul li.selected {
+    background-color: rgb(120, 120, 120);
+    cursor: default;
+}
+
+.sections_articulos ul li img {
+    width: 39px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.sections_articulos ul li a {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    font-size: 20px;
+}
+
+/* Contenido central */
+.Main {
+    background-color: rgb(160, 159, 159);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    grid-column: 2; /* Ocupa la segunda columna */
+    grid-row: 2; /* Ocupa la segunda fila */
+}
+
+/* Pie de página */
+.footer1 {
+    position: relative;
+    background-color: rgb(65, 141, 172);
+    color: white;
+    text-align: center;
+    padding: 14px;
+    grid-column: 1 / -1; /* Ocupa todo el ancho de la cuadrícula */
+    grid-row: 3; /* Ocupa la tercera fila */
+}
+
+.footer1 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.comentarios {
+    background-color: azure;
+    border-radius: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.comentarios img {
+    width: 150px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 50px;
+}
+
+.comentarios p {
+    margin: 10px;
+}
+.recomendaciones{
+    background-color: gainsboro;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: 20px auto;
+    border: 2px solid #c3d6e4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    color: #333;
+}
+.recomendaciones img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.recomendaciones text{
+    display: flex;
+    flex-direction: column;
+}
+.recomendaciones, .text, .name{
+    font-weight: bold;
+    margin-bottom: 5px;
+
+}
+.recomendaciones, .text, .comment{
+    color: #555;
+}
