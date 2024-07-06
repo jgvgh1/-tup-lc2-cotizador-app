@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizacion Hoy</title>
+    <link rel="Icon" href="img/mercado-global.png">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pages/informes.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+    <script src="js/pages/informes.js"></script>
+</head>
+<body>
+    <header>
+        <div class="Imagen_header">
+            <img src="img/cabecera-header.jpg" alt="">
+        </div>
+        <div class="logotipo">
+            <img src="img/mercado-global.png" alt="">
+        </div>
+        <p>Usted esta aqui: <a href="index.html">Inicio</a> / Informes</p>
+    </header>
+
+    <section id="sections_articulos">
+        <div class="sections_articulos">
+            <nav>
+                <ul>
+                    <li>
+                        <img src="img/hogar.png" alt="Icono">
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <img src="img/carpeta.png" alt="Icono">
+                        <a href="Miarchivo.html">Mi Archivo</a>
+                    </li>
+                    <li>
+                        <img src="img/documento.png" alt="Icono">
+                        <a href="#articulo-secciones-Informes">Informes</a>
+                    </li>
+                    <li>
+                        <img src="img/perfil.png" alt="Icono">
+                        <a href="Contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="recomendaciones">
+                <img src="img/usuario.avif" alt="Lilia Medina">
+                <div class="text">
+                    <div class="name">Lilia Medina</div>
+                    <div class="comment">Tiene un buen servicio y las cotizaciones son siempre correctas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main" id="main">
+        <section class="filter-section">
+            <label for="currency-filter">Seleccione una moneda:</label>
+            <select id="currency-filter">
+                <option value="TODAS">TODAS</option>
+                <option value="Dólar Oficial">Dólar Oficial</option>
+                <option value="Dólar Blue">Dólar Blue</option>
+                <option value="Dólar Bolsa (MEP)">Dólar Bolsa (MEP)</option>
+                <option value="Dólar Contado con Liqui (CCL)">Dólar Contado con Liqui (CCL)</option>
+                <option value="Dólar Tarjeta">Dólar Tarjeta</option>
+                <option value="Dólar Mayorista">Dólar Mayorista</option>
+                <option value="Dólar Cripto">Dólar Cripto</option>
+                <option value="Euro">Euro</option>
+                <option value="Real Brasileño">Real Brasileño</option>
+                <option value="Peso Chileno">Peso Chileno</option>
+                <option value="Peso Uruguayo">Peso Uruguayo</option>
+            </select>
+        </section>
+
+        <section class="report-section">
+            <h2>Informe</h2>
+            <div class="chart-container">
+                <canvas id="miGrafica"></canvas>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>MONEDA</th>
+                            <th>FECHA</th>
+                            <th>COMPRA</th>
+                            <th>VENTA</th>
+                            <th>VARIACIÓN</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-table-body">
+                        <!-- Filas de datos -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="email-section">
+            <a href="#" id="share-info">Compartir Información</a>
+            <div id="email-form" class="hidden">
+                <form>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <div class="form-buttons">
+                        <button type="button" id="close-form">CERRAR</button>
+                        <button type="submit" id="send-info">ENVIAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer1" id="footer">
+        <div class="table-footer">
+            <table>
+                <tr>
+                    <th>Institucional</th>
+                    <th>Accesos</th>
+                    <th>Contacto</th>
+                </tr>
+                <tr>
+                    <td><a href="#Quienes-somos">> ¿Quienes Somos?</a></td>
+                    <td><a href="#Inicio">> Inicio</a></td>
+                    <td>Universidad Tecnologica Nacional</td>
+                </tr>
+                <tr>
+                    <td><a href="#socios">> Socios Estrategicos</a></td>
+                    <td><a href="#Miarchivo">> Mi Archivo</a></td>
+                    <td>ZEBALLOS 1341 - S2000BQA</td>
+                </tr>
+                <tr>
+                    <td><a href="#Trabaje-con-nosotros">> Trabaje con Nosotros</a></td>
+                    <td><a href="#Iformes">> Informes</a></td>
+                    <td>Rosario</td>
+                </tr>
+                <tr>
+                    <td><a href="Ayuda">> Ayuda</a></td>
+                    <td><a href="Contactenos">> Contactenos</a></td>
+                    <td>0341-4481871</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="mailto:contacto@utn.edu.ar">¡Escribanos!</a></td>
+                </tr>
+            </table>
+            <div class="desarrolladores">
+                Desarrollado por Juan Gonzalez, Facundo Nieva (5555) <br>
+                TUP06 - 2024
+            </div>
+            <div class="info">
+                TUP - Cátedra de Laboratorio de Computación 2 - Año 2024
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

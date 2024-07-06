@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotizacion Hoy</title>
-    <link rel="Icon" href="./img/mercado-global.png">
-    <link rel="stylesheet" href="/css/pages/index.css">
+    <link rel="Icon" href="img/mercado-global.png">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pages/index.css">
+    
 </head>
 <body>
     <header class="header">
         <div class="Imagen_header">
-            <img src="./img/cabecera-header.jpg" alt="Header Image">
+            <img src="img/cabecera-header.jpg" alt="Header Image">
         </div>
         <div class="logotipo">
-            <img src="./img/mercado-global.png" alt="Logo">
+            <img src="img/mercado-global.png" alt="Logo">
         </div>
+
+        <p>Usted esta aqui: <a href="index.html">Inicio</a> / Página de Inicio</p>
+
     </header>
 
     <section id="sections_articulos">
@@ -22,19 +27,15 @@
             <nav>
                 <ul>
                     <li>
-                        <img src="./img/hogar.png" alt="Icono">
-                        <a href="index.html" target="_self">Inicio</a>
+                        <img src="img/hogar.png" alt="Icono">
+                        <a href="#Inicio">Inicio</a>
                     </li>
                     <li>
-                        <img src="./img/carpeta.png" alt="Icono">
+                        <img src="img/carpeta.png" alt="Icono">
                         <a href="Miarchivo.html" target="_self">Mi Archivo</a>
                     </li>
                     <li>
-                        <img src="./img/documento.png" alt="Icono">
-                        <a href="Miarchivo.html" target="_self">Mi Archivo</a>
-                    </li>
-                    <li>
-                        <img src="./img/documento.png" alt="Icono">
+                        <img src="img/documento.png" alt="Icono">
                         <a href="informes.html" target="_self">Informes</a>
                     </li>
                     <li>
@@ -44,47 +45,149 @@
                 </ul>
             </nav>
             <div class="recomendaciones">
-                <h2>Recomendaciones</h2>
-                <p>Francisca Medina</p>
-                <p>Tienen un buen servicio y las cotizaciones son siempre correctas</p>
+                <img src="img/usuario.avif" alt="Lilia Medina">
+                <div class="text">
+                    <div class="name">Lilia Medina</div>
+                    <div class="comment">Tienen un buen servicio y las cotizaciones son siempre correctas</div>    
+                </div> 
             </div>
         </div>
     </section>
 
-    <main class="Main" id="Mainn">
-        <p>Elsss</p>
+    <main class="main" id="main">
+        <h3>Pizarra de cotizaciones</h3>
+        <p>(Precio de moneda en valor peso argentino)</p>
+        <div class="currency-container">
+            <div>
+            
+            </div>
+            <div class="currency-selector" id="currency-selector">
+                <label for="monetary-selector">Seleccione una moneda:</label>
+                <select name="monetary-selector" id="monetary-selector">
+                    <option value="TODAS LAS MONEDAS" selected>Monedas</option>
+                    <option value="DOLAR OFICIAL">Dolar Oficial</option>
+                    <option value="DOLAR BLUE">Dolar Blue</option>
+                    <option value="DOLAR MEP">Dolar MEP</option>
+                    <option value="DOLAR CCL">Dolar CCL</option>
+                    <option value="DOLAR TARJETA">Dolar Tarjeta</option>
+                    <option value="DOLAR CRIPTO">Dolar Cripto</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="currency-displayer" id="currency-displayer">
+            <p>Datos actualizados: ??/??/?? ??:??hs</p>
+            <form action="" method="post" id="currency-displayer-form">
+                <div class="currency-board">
+                    <div class="currency-row">
+                        <div class="tipo-moneda">OFICIAL</div>
+                        <div class="precio-compra">PRECIO COMPRA $</div>
+                        <div class="precio-venta">PRECIO VENTA $</div>
+                        <div class="moneda-favorita">* (FAV)</div>
+                    </div>
+                    <div class="currency-row">
+                        <div class="tipo-moneda">BLUE</div>
+                        <div class="precio-compra">PRECIO COMPRA $</div>
+                        <div class="precio-venta">PRECIO VENTA $</div>
+                        <div class="moneda-favorita">* (FAV)</div>
+                    </div>
+                    <div class="currency-row">
+                        <div class="tipo-moneda">TARJETA</div>
+                        <div class="precio-compra">PRECIO COMPRA $</div>
+                        <div class="precio-venta">PRECIO VENTA $</div>
+                        <div class="moneda-favorita">* (FAV)</div>
+                    </div>
+                    <div class="currency-row">
+                        <div class="tipo-moneda">MEP (DOLAR BOLSA)</div>
+                        <div class="precio-compra">PRECIO COMPRA $</div>
+                        <div class="precio-venta">PRECIO VENTA $</div>
+                        <div class="moneda-favorita">* (FAV)</div>
+                    </div>
+                    <div class="currency-row">
+                        <div class="tipo-moneda">CCL (CONTADO CON LIQUI)</div>
+                        <div class="precio-compra">PRECIO COMPRA $</div>
+                        <div class="precio-venta">PRECIO VENTA $</div>
+                        <div class="moneda-favorita">* (FAV)</div>
+                    </div>
+                    <div class="currency-row">
+                        <div class="tipo-moneda">USDT (CRIPTO)</div>
+                        <div class="precio-compra">PRECIO COMPRA $</div>
+                        <div class="precio-venta">PRECIO VENTA $</div>
+                        <div class="moneda-favorita">* (FAV)</div>
+                    </div>
+                    <div class="currency-row">
+                        <div class="tipo-moneda">EURO</div>
+                        <div class="precio-compra">PRECIO COMPRA $</div>
+                        <div class="precio-venta">PRECIO VENTA $</div>
+                        <div class="moneda-favorita">* (FAV)</div>
+                    </div>
+                    <div class="currency-row">
+                        <div class="tipo-moneda">REAL BRASILEÑO</div>
+                        <div class="precio-compra">PRECIO COMPRA $</div>
+                        <div class="precio-venta">PRECIO VENTA $</div>
+                        <div class="moneda-favorita">* (FAV)</div>
+                    </div>
+                    <div class="currency-row">
+                        <div class="tipo-moneda">PESO CHILENO</div>
+                        <div class="precio-compra">PRECIO COMPRA $</div>
+                        <div class="precio-venta">PRECIO VENTA $</div>
+                        <div class="moneda-favorita">* (FAV)</div>
+                    </div>
+                    <div class="currency-row">
+                        <div class="tipo-moneda">PESO URUGUAYO</div>
+                        <div class="precio-compra">PRECIO COMPRA $</div>
+                        <div class="precio-venta">PRECIO VENTA $</div>
+                        <div class="moneda-favorita">* (FAV)</div>
+                    </div>
+                </div>
+            </form>
+        </div>   
     </main>
 
-    <footer class="footer1" id="footer">
-        <table>
-            <tr>
-                <th>Institucional</th>
-                <th>Accesos</th>
-                <th>Contacto</th>
-            </tr>
-            <tr>
-                <td><a href="#Quienes-somos">> ¿Quienes Somos?</a></td>
-                <td><a href="#Inicio">> Inicio</a></td>
-                <td>Universidad Tecnologica Nacional</td>
-            </tr>
-            <tr>
-                <td><a href="#socios">> Socios Estrategicos</a></td>
-                <td><a href="#Miarchivo">> Mi Archivo</a></td>
-                <td>ZEBALLOS 1341 - S2000BQA</td>
-            </tr>
-            <tr>
-                <td><a href="TcN">> Trabaje con Nosotros</a></td>
-                <td><a href="Ayuda">> Informes</a></td>
-                <td>Rosario</td>
-            </tr>
-            <tr>
-                <td><a href="Ayuda">> Ayuda</a></td>
-                <td><a href="Contactenos">> Contactenos</a></td>
-                <td>0341-4481871</td>
-                <td><a href="#">¡Escribanos!</a></td>
-            </tr>
-        </table>
+    <footer class="footer1" id="footer1">
+        <div class="table-footer">
+            <table>
+                <tr>
+                    <th>Institucional</th>
+                    <th>Accesos</th>
+                    <th>Contacto</th>
+                </tr>
+                <tr>
+                    <td><a href="#Quienes-somos">¿Quiénes Somos?</a></td>
+                    <td><a href="#Inicio">Inicio</a></td>
+                    <td>Universidad Tecnológica Nacional</td>
+                </tr>
+                <tr>
+                    <td><a href="#Socios">Socios Estratégicos</a></td>
+                    <td><a href="#Miarchivo">Mi archivo</a></td>
+                    <td>ZEBALLOS 1341 - S2000BQA</td>
+                </tr>
+                <tr>
+                    <td><a href="#Trabaje-con-nosotros">Trabaje con nosotros</a></td>
+                    <td><a href="#Informes">Informes</a></td>
+                    <td>Rosario</td>
+                </tr>
+                <tr>
+                    <td><a href="Ayuda">Ayuda</a></td>
+                    <td><a href="#Contactenos">Contáctenos</a></td>
+                    <td>0341-4481871</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="mailto:contacto@utn.edu.ar">¡Escríbanos!</a></td>
+                </tr>
+            </table>
+            <div class="desarrolladores">
+                Desarrollado por Juan Gonzalez, Facundo Nieva (55555) <br> <!--Incluir numero de legajo en ()-->
+                TUP06 - 2024
+            </div>
+            <div class="info">
+                TUP - Cátedra de Laboratorio de Computación 2 - Año 2024
+            </div>
+        </div>
     </footer>
-    <script src="app.js"></script>
+    <script src="js/common.js"></script>
+
 </body>
 </html>

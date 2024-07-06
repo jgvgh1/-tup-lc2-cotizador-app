@@ -5,15 +5,21 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr 3fr; 
-    grid-template-rows: auto 1fr auto; 
-    grid-gap: 20px; /* Espacio entre celdas */
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 20px;
 }
 
-/* Cabecera que ocupa todo el ancho */
 header {
     position: relative;
-    grid-column: 1 / -1; /* Ocupa todo el ancho de la cuadrícula */
+    grid-column: 1 / -1;
+}
+
+header p{
+    text-align: right;
+    margin-right: 30px;
+    font-family: sans-serif;
+    font-size: 14px;
 }
 
 .Imagen_header img {
@@ -26,7 +32,7 @@ header {
 .Imagen_header::before {
     content: "Cotizacion Monetaria";
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -37,8 +43,8 @@ header {
 
 .logotipo {
     position: absolute;
-    top: 50%;
-    left: 42%;
+    top: 40%;
+    left: 38%;
     transform: translate(-50%, -50%);
 }
 
@@ -48,15 +54,15 @@ header {
     margin-right: 10px;
 }
 
-/* Barra lateral izquierda */
 .sections_articulos {
+    margin-bottom: 20px;
     background-color: rgb(84, 158, 187);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     padding: 10px;
-    grid-column: 1; /* Ocupa la primera columna */
-    grid-row: 2; /* Ocupa la segunda fila */
+    grid-column: 1;
+    grid-row: 2;
 }
 
 .sections_articulos ul {
@@ -99,32 +105,58 @@ header {
     font-size: 20px;
 }
 
-/* Contenido central */
-.Main {
-    background-color: rgb(160, 159, 159);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    padding: 100px;
-    grid-column: 2; /* Ocupa la segunda columna */
-    grid-row: 2; /* Ocupa la segunda fila */
-}
-
-/* Pie de página */
 .footer1 {
     position: relative;
     background-color: rgb(65, 141, 172);
     color: white;
     text-align: center;
-    padding: 14px;
-    grid-column: 1 / -1; /* Ocupa todo el ancho de la cuadrícula */
-    grid-row: 3; /* Ocupa la tercera fila */
+    padding: 20px;
+    height: 170px; 
+    grid-column: 1 / -1; 
+    grid-row: 3; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.footer1 table {
+.table-footer {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    width: 100%;
+    padding-top: 10px;
+}
+
+.table-footer table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
+}
+
+.table-footer th .table-footer td, .table-footer a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.table-footer .footer1 a:hover {
+    text-decoration: underline;
+}
+
+.desarrolladores {
+    margin-top: 10px;
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+    font-size: 12px;
+}
+
+.info .footer1 {
+    margin-top: 5px;
+    text-align: center;
 }
 
 .comentarios {
@@ -150,8 +182,8 @@ header {
 .comentarios p {
     margin: 10px;
 }
-.recomendaciones{
-    background-color: gainsboro;
+.recomendaciones {
+    background-color: #d0e7ff;
     border-radius: 10px;
     padding: 20px;
     display: flex;
@@ -160,25 +192,30 @@ header {
     margin: 20px auto;
     border: 2px solid #c3d6e4;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: sans-serif, Arial;
+    font-family: Arial, sans-serif;
     font-size: 16px;
     color: #333;
+    text-align: center;
 }
-.recomendaciones img{
+
+.recomendaciones img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 10px;
 }
-.recomendaciones text{
+
+.recomendaciones .text {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
-.recomendaciones, .text, .name{
+
+.recomendaciones .text .name {
     font-weight: bold;
     margin-bottom: 5px;
-
 }
-.recomendaciones, .text, .comment{
+
+.recomendaciones .text .comment {
     color: #555;
 }

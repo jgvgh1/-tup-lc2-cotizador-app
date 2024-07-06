@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+}
+
+.header .Imagen_header img {
+    width: 100%;
+    height: auto;
+}
+
+.header .logotipo img {
+    width: 50px;
+    height: auto;
+}
+
+.header p {
+    margin: 10px 0;
+}
+
+.sections_articulos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sections_articulos nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sections_articulos nav ul li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.sections_articulos nav ul li img {
+    margin-right: 10px;
+}
+
+.sections_articulos .recomendaciones {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.sections_articulos .recomendaciones img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.sections_articulos .recomendaciones .text {
+    margin-left: 10px;
+}
+
+.main {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-section label {
+    margin-right: 10px;
+}
+
+.report-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+}
+
+.table-container {
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container table th, .table-container table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table-container table th {
+    background-color: #f2f2f2;
+}
+
+.email-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#share-info {
+    display: inline-block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#email-form {
+    display: none;
+    position: relative;
+    background: rgba(255, 204, 0, 0.9);
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#email-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#email-form label {
+    margin-bottom: 10px;
+}
+
+#email-form input {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#email-form .form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#email-form .form-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#email-form .form-buttons button#close-form {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+#email-form .form-buttons button#send-info {
+    background-color: #28a745;
+    color: #fff;
+}
