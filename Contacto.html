@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotizacion Hoy</title>
     <link rel="Icon" href="img/mercado-global.png">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/pages/index.css">
-    
+    <link rel="stylesheet" href="css/pages/contacto.css">
 </head>
+
 <body>
-    <header class="header">
+    <header>
         <div class="Imagen_header">
-            <img src="img/cabecera-header.jpg" alt="Header Image">
+            <img src="img/cabecera-header.jpg" alt="">
         </div>
         <div class="logotipo">
-            <img src="img/mercado-global.png" alt="Logo">
+            <img src="img/mercado-global.png" alt="">
         </div>
-
-        <p>Usted esta aqui: <a href="index.html">Inicio</a> / Página de Inicio</p>
-
+        <p>Usted está aquí: <a href="index.html">Inicio</a> / Contacto</p>
     </header>
 
     <section id="sections_articulos">
@@ -28,123 +27,90 @@
                 <ul>
                     <li>
                         <img src="img/hogar.png" alt="Icono">
-                        <a href="#Inicio">Inicio</a>
+                        <a href="index.html">Inicio</a>
                     </li>
                     <li>
                         <img src="img/carpeta.png" alt="Icono">
-                        <a href="Miarchivo.html" target="_self">Mi Archivo</a>
+                        <a href="Miarchivo.html">Mi Archivo</a>
                     </li>
                     <li>
                         <img src="img/documento.png" alt="Icono">
-                        <a href="informes.html" target="_self">Informes</a>
+                        <a href="informes.html">Informes</a>
                     </li>
                     <li>
-                        <img src="./img/perfil.png" alt="Icono">
-                        <a href="Contacto.html" target="_self">Contacto</a>
+                        <img src="img/perfil.png" alt="Icono">
+                        <a href="#footer-contacto">Contacto</a>
                     </li>
                 </ul>
             </nav>
-            <div class="recomendaciones">
-                <img src="img/usuario.avif" alt="Lilia Medina">
-                <div class="text">
-                    <div class="name">Lilia Medina</div>
-                    <div class="comment">Tienen un buen servicio y las cotizaciones son siempre correctas</div>    
-                </div> 
+            <div class="opinion-rotator">
+                <div class="opinion active">
+                    <img src="img/usario1.jpg" alt="Usuario 1">
+                    <h5>Roger Medina</h5>
+                    <p>"Excelente servicio y atención al cliente. Siempre resuelven mis dudas rápidamente."</p>
+                </div>
+                <div class="opinion">
+                    <img src="img/usario2.jpg" alt="Usuario 2">
+                    <h5>Carlos Alcaraz</h5>
+                    <p>"Los precios son muy competitivos y siempre actualizados. Recomiendo este servicio."</p>
+                </div>
+                <div class="opinion">
+                    <img src="img/usuario3.jpeg" alt="Usuario 3">
+                    <h5>Facundo Lopez</h5>
+                    <p>"Tienen un buen servicio y las cotizaciones son siempre correctas. Muy satisfecho."</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <main class="main" id="main">
-        <h3>Pizarra de cotizaciones</h3>
-        <p>(Precio de moneda en valor peso argentino)</p>
-        <div class="currency-container">
-            <div>
-            
+    <main class="Main" id="Main">
+        <div class="texto-contactowebcotizaciones">
+            <h2>Contacto Web Cotizaciones</h2>
+        </div>
+        <div class="container">
+            <div class="formulario-container">
+                <h2>DATOS DE CONTACTO</h2>
+                <div class="formulario">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="nombre" id="nombrelabel">Nombre: </label>
+                            <input type="text" name="nombre" id="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" id="emaillabel">Email: </label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje" id="mensajelabel">Mensaje: </label>
+                            <textarea name="mensaje" id="mensaje" required></textarea>
+                        </div>
+                        <div class="form-botones">
+                            <button type="button" class="btn-limpiar">Limpiar</button>
+                            <button type="submit" class="btn-enviar">Enviar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="currency-selector" id="currency-selector">
-                <label for="monetary-selector">Seleccione una moneda:</label>
-                <select name="monetary-selector" id="monetary-selector">
-                    <option value="TODAS LAS MONEDAS" selected>Monedas</option>
-                    <option value="DOLAR OFICIAL">Dolar Oficial</option>
-                    <option value="DOLAR BLUE">Dolar Blue</option>
-                    <option value="DOLAR MEP">Dolar MEP</option>
-                    <option value="DOLAR CCL">Dolar CCL</option>
-                    <option value="DOLAR TARJETA">Dolar Tarjeta</option>
-                    <option value="DOLAR CRIPTO">Dolar Cripto</option>
-                </select>
+            <div class="derecha">
+                <div class="parrafo">
+                    <p>Si tiene alguna sugerencia o inconveniente por favor complete el siguiente formulario y
+                        envíenoslo. Lo contactaremos a la brevedad.</p>
+                    <p>Esta web está desarrollada utilizando <a href="https://dolarapi.com/"
+                            target="_blank">https://dolarapi.com/</a>
+                    </p>
+                </div>
+                <div class="datos-contacto">
+                    <h2>DATOS DE CONTACTO</h2>
+                    <p>Universidad Tecnológica Nacional</p>
+                    <p>ZEBALLOS 1341 - S2000BQA</p>
+                    <p>ROSARIO</p>
+                    <p>0341 - 4481871</p>
+                </div>
             </div>
         </div>
-
-        <div class="currency-displayer" id="currency-displayer">
-            <p>Datos actualizados: ??/??/?? ??:??hs</p>
-            <form action="" method="post" id="currency-displayer-form">
-                <div class="currency-board">
-                    <div class="currency-row">
-                        <div class="tipo-moneda">OFICIAL</div>
-                        <div class="precio-compra">PRECIO COMPRA $</div>
-                        <div class="precio-venta">PRECIO VENTA $</div>
-                        <div class="moneda-favorita">* (FAV)</div>
-                    </div>
-                    <div class="currency-row">
-                        <div class="tipo-moneda">BLUE</div>
-                        <div class="precio-compra">PRECIO COMPRA $</div>
-                        <div class="precio-venta">PRECIO VENTA $</div>
-                        <div class="moneda-favorita">* (FAV)</div>
-                    </div>
-                    <div class="currency-row">
-                        <div class="tipo-moneda">TARJETA</div>
-                        <div class="precio-compra">PRECIO COMPRA $</div>
-                        <div class="precio-venta">PRECIO VENTA $</div>
-                        <div class="moneda-favorita">* (FAV)</div>
-                    </div>
-                    <div class="currency-row">
-                        <div class="tipo-moneda">MEP (DOLAR BOLSA)</div>
-                        <div class="precio-compra">PRECIO COMPRA $</div>
-                        <div class="precio-venta">PRECIO VENTA $</div>
-                        <div class="moneda-favorita">* (FAV)</div>
-                    </div>
-                    <div class="currency-row">
-                        <div class="tipo-moneda">CCL (CONTADO CON LIQUI)</div>
-                        <div class="precio-compra">PRECIO COMPRA $</div>
-                        <div class="precio-venta">PRECIO VENTA $</div>
-                        <div class="moneda-favorita">* (FAV)</div>
-                    </div>
-                    <div class="currency-row">
-                        <div class="tipo-moneda">USDT (CRIPTO)</div>
-                        <div class="precio-compra">PRECIO COMPRA $</div>
-                        <div class="precio-venta">PRECIO VENTA $</div>
-                        <div class="moneda-favorita">* (FAV)</div>
-                    </div>
-                    <div class="currency-row">
-                        <div class="tipo-moneda">EURO</div>
-                        <div class="precio-compra">PRECIO COMPRA $</div>
-                        <div class="precio-venta">PRECIO VENTA $</div>
-                        <div class="moneda-favorita">* (FAV)</div>
-                    </div>
-                    <div class="currency-row">
-                        <div class="tipo-moneda">REAL BRASILEÑO</div>
-                        <div class="precio-compra">PRECIO COMPRA $</div>
-                        <div class="precio-venta">PRECIO VENTA $</div>
-                        <div class="moneda-favorita">* (FAV)</div>
-                    </div>
-                    <div class="currency-row">
-                        <div class="tipo-moneda">PESO CHILENO</div>
-                        <div class="precio-compra">PRECIO COMPRA $</div>
-                        <div class="precio-venta">PRECIO VENTA $</div>
-                        <div class="moneda-favorita">* (FAV)</div>
-                    </div>
-                    <div class="currency-row">
-                        <div class="tipo-moneda">PESO URUGUAYO</div>
-                        <div class="precio-compra">PRECIO COMPRA $</div>
-                        <div class="precio-venta">PRECIO VENTA $</div>
-                        <div class="moneda-favorita">* (FAV)</div>
-                    </div>
-                </div>
-            </form>
-        </div>   
     </main>
 
-    <footer class="footer1" id="footer1">
+    <footer class="footer1" id="footer">
         <div class="table-footer">
             <table>
                 <tr>
@@ -153,23 +119,23 @@
                     <th>Contacto</th>
                 </tr>
                 <tr>
-                    <td><a href="#Quienes-somos">¿Quiénes Somos?</a></td>
-                    <td><a href="#Inicio">Inicio</a></td>
+                    <td><a href="#Quienes-somos">> ¿Quienes Somos?</a></td>
+                    <td><a href="#Inicio">> Inicio</a></td>
                     <td>Universidad Tecnológica Nacional</td>
                 </tr>
                 <tr>
-                    <td><a href="#Socios">Socios Estratégicos</a></td>
-                    <td><a href="#Miarchivo">Mi archivo</a></td>
+                    <td><a href="#socios">> Socios Estratégicos</a></td>
+                    <td><a href="#Miarchivo">> Mi Archivo</a></td>
                     <td>ZEBALLOS 1341 - S2000BQA</td>
                 </tr>
                 <tr>
-                    <td><a href="#Trabaje-con-nosotros">Trabaje con nosotros</a></td>
-                    <td><a href="#Informes">Informes</a></td>
+                    <td><a href="#Trabaje-con-nosotros">> Trabaje con Nosotros</a></td>
+                    <td><a href="#Iformes">> Informes</a></td>
                     <td>Rosario</td>
                 </tr>
                 <tr>
-                    <td><a href="Ayuda">Ayuda</a></td>
-                    <td><a href="#Contactenos">Contáctenos</a></td>
+                    <td><a href="#Ayuda">> Ayuda</a></td>
+                    <td><a href="#Contactenos">> Contáctenos</a></td>
                     <td>0341-4481871</td>
                 </tr>
                 <tr>
@@ -179,7 +145,7 @@
                 </tr>
             </table>
             <div class="desarrolladores">
-                Desarrollado por Juan Gonzalez, Facundo Nieva (55555) <br> <!--Incluir numero de legajo en ()-->
+                Desarrollado por Juan Gonzalez, Facundo Nieva (5555) <br>
                 TUP06 - 2024
             </div>
             <div class="info">
@@ -187,7 +153,15 @@
             </div>
         </div>
     </footer>
-    <script src="js/common.js"></script>
 
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("aHOY9CmCGaTgBlFBd"); 
+        })();
+    </script>
+    <script src="js/pages/contacto.js"></script>
+    <script src="js/common.js"></script>
 </body>
+
 </html>

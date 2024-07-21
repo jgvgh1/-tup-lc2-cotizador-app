@@ -59,105 +59,156 @@ body {
 }
 
 .main {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     background-color: #fff;
 }
 
 .filter-section {
     margin-bottom: 20px;
+    background-color:  rgb(157, 165, 165);
+    border-radius: 5px;
+    height: 100px;
+    width: 400px;
+}
+.filter-section label{
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.selector{
+    width: 70%;
+    padding: 5px;
+    margin-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
-.filter-section label {
-    margin-right: 10px;
-}
 
-.report-section h2 {
+.email-section {
+    margin-bottom: 20px;
     text-align: center;
+}
+
+.report-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.report-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Mueve el contenido a la derecha */
     margin-bottom: 20px;
 }
 
 .chart-container {
+    width: 600px; /* Ancho fijo para la gráfica */
+}
+
+.chart-container canvas {
     width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
-    background-color: #f2f2f2;
+    height: auto;
+    background-color: #bebebe;
+    border-radius: 5px;
 }
 
 .table-container {
-    overflow-y: auto;
-    max-height: 400px;
+    width: 100%; /* Ancho completo de la tabla */
+    display: flex;
+    justify-content: center; /* Centrar la tabla */
 }
 
 .table-container table {
-    width: 100%;
-    border-collapse: collapse;
+    width: 100%; /* Ancho completo de la tabla */
+    border-collapse: collapse; /* Colapsar bordes */
 }
 
-.table-container table th, .table-container table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+.table-container table th,
+.table-container table td {
+    border: 1px solid #ddd; /* Borde de las celdas */
+    padding: 8px; /* Espaciado interno */
+    text-align: left; /* Alinear texto a la izquierda */
 }
 
 .table-container table th {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2; /* Color de fondo de los encabezados */
 }
 
-.email-section {
-    margin-top: 20px;
-    text-align: center;
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 
-#share-info {
-    display: inline-block;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-#email-form {
-    display: none;
-    position: relative;
-    background: rgba(255, 204, 0, 0.9);
-    border-radius: 20px;
+.modal-content {
+    background-color: rgba(84, 158, 187, 0.2);
+    margin: 15% auto; 
     padding: 20px;
-    max-width: 400px;
-    margin: 0 auto;
+    border: 1px solid #888; 
+    border-radius: 10px; 
+    width: 80%; 
+    max-width: 500px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-#email-form form {
+.modal-content form {
     display: flex;
     flex-direction: column;
 }
 
-#email-form label {
+.modal-content label,
+.modal-content input {
     margin-bottom: 10px;
 }
 
-#email-form input {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.modal-content input {
+    padding: 10px; 
+    width: 100%; 
+    box-sizing: border-box; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
 }
 
-#email-form .form-buttons {
+.modal-content label {
+    font-weight: bold; 
+}
+
+.form-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
-#email-form .form-buttons button {
-    padding: 10px 20px;
-    border: none;
+.form-buttons button {
+    margin-left: 10px;
     border-radius: 5px;
-    cursor: pointer;
+    padding: 8px 16px; 
+    font-size: 14px; 
 }
 
-#email-form .form-buttons button#close-form {
-    background-color: #dc3545;
-    color: #fff;
+#close-form {
+    background-color: rgb(157, 165, 165);
+    font-style: italic;
+    color: black;
 }
 
-#email-form .form-buttons button#send-info {
-    background-color: #28a745;
-    color: #fff;
+#send-info {
+    background-color: rgb(110, 185, 91);
+    font-style: italic;
+    color: black;
+    font-weight: bold; 
+}
+#share-info{
+    margin-right: 80%;
+    color: black;
 }

@@ -1,11 +1,20 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #fff;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .formulario-container {
     background-color: rgb(203, 205, 207);
     border-radius: 15px;
     text-align: left;
     padding: 20px;
     font-family: sans-serif;
-    display: inline-block;
-    vertical-align: top;
     width: 45%;
     margin: 20px;
 }
@@ -39,8 +48,11 @@ h2 {
 }
 
 .form-botones {
-    margin-top: 1px;
-    margin-left: 500px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 2px;
+    margin-left: 150px;
 }
 
 .btn-limpiar,
@@ -62,7 +74,7 @@ h2 {
     color: white;
 }
 
-.texto-contactowebcotizaciones h2 {
+.texto-contactowebcotizaciones {
     text-align: center;
     margin-top: 20px;
 }

@@ -1,100 +1,70 @@
 function displaySavedQuotes() {
-
     const savedQuotes = getSavedQuotes();
 
-
-    const table = document.createElement('table');
-    const thead = document.createElement('thead');
-    const tbody = document.createElement('tbody');
-
-
-    const headerRow = document.createElement('tr');
-    ['FECHA', 'MONEDA', 'COMPRA', 'VENTA', 'ACCIÓN'].forEach(header => {
-    const th = document.createElement('th');
-    th.textContent = header;
-    headerRow.appendChild(th);
-    });
-    thead.appendChild(headerRow);
-
+    const tbody = document.getElementById('saved-quotes-tbody');
+    if (!tbody) {
+        console.error('Elemento tbody no encontrado');
+        return;
+    }
+    tbody.innerHTML = '';
 
     savedQuotes.forEach(quote => {
-    const row = document.createElement('tr');
+        const row = document.createElement('tr');
 
+        const dateCell = document.createElement('td');
+        dateCell.textContent = quote.date;
+        row.appendChild(dateCell);
 
-    const dateCell = document.createElement('td');
-    dateCell.textContent = quote.date;
-    row.appendChild(dateCell);
+        const currencyCell = document.createElement('td');
+        currencyCell.innerHTML = quote.moneda.split(', ').join('<br>');
+        row.appendChild(currencyCell);
 
+        const buyCell = document.createElement('td');
+        buyCell.innerHTML = quote.compra.split(', ').join('<br>');
+        row.appendChild(buyCell);
 
-    const currenciesCell = document.createElement('td');
-    quote.currencies.forEach(currency => {
-        const currencyElement = document.createElement('div');
-        currencyElement.textContent = currency;
-        currenciesCell.appendChild(currencyElement);
+        const sellCell = document.createElement('td');
+        sellCell.innerHTML = quote.venta.split(', ').join('<br>');
+        row.appendChild(sellCell);
+
+        const actionCell = document.createElement('td');
+        const deleteButton = document.createElement('button');
+        deleteButton.className = 'delete-button';
+        deleteButton.textContent = '🗑️';
+        deleteButton.addEventListener('click', () => removeQuote(quote.date));
+        actionCell.appendChild(deleteButton);
+        row.appendChild(actionCell);
+
+        tbody.appendChild(row);
     });
-    row.appendChild(currenciesCell);
-
-    const buyCell = document.createElement('td');
-    buyCell.textContent = quote.buy;
-    row.appendChild(buyCell);
-
-    const sellCell = document.createElement('td');
-    sellCell.textContent = quote.sell;
-    row.appendChild(sellCell);
-
-
-    const actionCell = document.createElement('td');
-    const deleteButton = document.createElement('button');
-    deleteButton.className = 'delete-button';
-    deleteButton.textContent = '🗑️';
-    deleteButton.addEventListener('click', () => removeQuote(quote.date));
-    actionCell.appendChild(deleteButton);
-    row.appendChild(actionCell);
-
-    tbody.appendChild(row);
-    });
-
-    table.appendChild(thead);
-    table.appendChild(tbody);
-
-
-    const miArchivoContainer = document.querySelector('.mi-archivo-container');
-    miArchivoContainer.innerHTML = '';
-    miArchivoContainer.appendChild(table);
+}
+//esta funcion lo que hace es que obitene las cotizaciones guardadas del localstorage y con el JSON lo hace un array de objetos, si no hay una cotizacion guardada lo devuelte vacio
+function getSavedQuotes() {
+    return JSON.parse(localStorage.getItem('cotizacionesFavoritas')) || [];
 }
 
-
+// filtra las cotizaciones que guardamos para eliminar la cotizacion que coincide con la fecha, despues actualiza el localstorage con las restantes y dspues llama a diplaysavedquotes para refrescar la tabla
 function removeQuote(date) {
-
-    console.log(`Eliminando cotización del ${date}`);
+    let savedQuotes = getSavedQuotes();
+    savedQuotes = savedQuotes.filter(quote => quote.date !== date);
+    localStorage.setItem('cotizacionesFavoritas', JSON.stringify(savedQuotes));
+    displaySavedQuotes();
 }
-
-
+//lo que hace es que abre una ventana para imprimir el contenido
 function printReport() {
+    const reportContent = document.querySelector('.mi-archivo-container').innerHTML;
 
-    var reportContent = document.querySelector('.mi-archivo-container').innerHTML;
-
-    var printWindow = window.open('', '', 'height=400,width=800');
+    const printWindow = window.open('', '', 'height=400,width=800');
     printWindow.document.write('<html><head><title>Cotizacion Hoy</title>');
     printWindow.document.write('</head><body >');
     printWindow.document.write(reportContent);
     printWindow.document.write('</body></html>');
 
-
     printWindow.document.close();
     printWindow.focus();
     printWindow.print();
-
     printWindow.close();
 }
 
-displaySavedQuotes();
-
-
-document.getElementById('share-info').addEventListener('click', function() {
-    document.getElementById('email-form').classList.toggle('hidden');
-});
-
-document.getElementById('close-form').addEventListener('click', function() {
-    document.getElementById('email-form').classList.add('hidden');
-});
+// Llama a la función para mostrar las cotizaciones guardadas al cargar la página
+document.addEventListener('DOMContentLoaded', displaySavedQuotes);

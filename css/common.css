@@ -1,6 +1,7 @@
 body {
     background-color: rgb(214, 212, 212);
     position: relative;
+    flex-direction: column;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -14,7 +15,6 @@ header {
     position: relative;
     grid-column: 1 / -1;
 }
-
 header p{
     text-align: right;
     margin-right: 30px;
@@ -24,9 +24,10 @@ header p{
 
 .Imagen_header img {
     width: 100%;
-    height: 100px;
+    height: 120px;
     object-fit: cover;
     border-radius: 0;
+    
 }
 
 .Imagen_header::before {
@@ -44,7 +45,7 @@ header p{
 .logotipo {
     position: absolute;
     top: 40%;
-    left: 38%;
+    left: 42%;
     transform: translate(-50%, -50%);
 }
 
@@ -83,12 +84,10 @@ header p{
     font-weight: bold;
     cursor: pointer;
 }
-
 .sections_articulos ul li:hover {
     background-color: rgb(140, 140, 140);
 }
-
-.sections_articulos ul li.selected {
+.sections_articulos ul li.selected{
     background-color: rgb(120, 120, 120);
     cursor: default;
 }
@@ -105,47 +104,42 @@ header p{
     font-size: 20px;
 }
 
+
 .footer1 {
     position: relative;
     background-color: rgb(65, 141, 172);
     color: white;
     text-align: center;
     padding: 20px;
-    height: 170px; 
-    grid-column: 1 / -1; 
-    grid-row: 3; 
+    height: 170px;
+    grid-column: 1 / -1;
+    grid-row: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
 .table-footer {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
-    padding-top: 10px;
 }
-
 .table-footer table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
-
-.table-footer th .table-footer td, .table-footer a {
+.table-footer th, .table-footer td, .table-footer a {
     color: black;
     text-decoration: none;
     font-size: 14px;
     padding: 5px;
 }
-
 .table-footer .footer1 a:hover {
     text-decoration: underline;
 }
-
 .desarrolladores {
     margin-top: 10px;
     width: 100%;
@@ -153,12 +147,11 @@ header p{
     padding-right: 20px;
     font-size: 12px;
 }
-
 .info .footer1 {
     margin-top: 5px;
     text-align: center;
-}
 
+} 
 .comentarios {
     background-color: azure;
     border-radius: 150px;
@@ -170,7 +163,6 @@ header p{
     padding: 20px;
     margin-top: 20px;
 }
-
 .comentarios img {
     width: 150px;
     height: auto;
@@ -178,12 +170,11 @@ header p{
     margin-left: 10px;
     border-radius: 50px;
 }
-
 .comentarios p {
     margin: 10px;
 }
 .recomendaciones {
-    background-color: #d0e7ff;
+    background-color: #c3d6e4;
     border-radius: 10px;
     padding: 20px;
     display: flex;
@@ -197,25 +188,72 @@ header p{
     color: #333;
     text-align: center;
 }
-
 .recomendaciones img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 20px;
 }
-
-.recomendaciones .text {
+.recomendaciones text {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
-
-.recomendaciones .text .name {
+.recomendaciones, .text, .name {
     font-weight: bold;
     margin-bottom: 5px;
 }
-
-.recomendaciones .text .comment {
+.recomendaciones, .text, .comment {
     color: #555;
+}
+
+.Main {
+    background-color: rgb(160, 159, 159);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.opinion-rotator {
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+}
+
+.opinion {
+    display: none; 
+}
+
+.opinion.active {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.opinion img {
+    border-radius: 50%; 
+    width: 60px; 
+    height: 60px; 
+    margin-bottom: 10px;
+}
+
+.opinion h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.2em; 
+}
+
+.opinion p { 
+    color: #555; 
+    text-align: center;
+    margin: 0;
 }
